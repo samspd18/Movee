@@ -6,6 +6,7 @@ import com.satya.movee.model.trendingMovies.MovieCredits
 import com.satya.movee.model.trendingMovies.MovieDetailModel
 import com.satya.movee.model.trendingMovies.MovieVideo
 import com.satya.movee.model.trendingMovies.TrendingMovieList
+import com.satya.movee.model.trendingTvShows.TrendingTvShowsList
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -49,5 +50,8 @@ interface RetrofitService {
     @GET("search/movie?api_key=${apiKey}&language=en-US&page=1&include_adult=false&region=IN")
     fun getSearchResult(@Query("query") query: String): Call<SearchMovieModel>
 
+    //trending tv
+    @GET("trending/tv/week?api_key=${apiKey}&region=IN")
+    fun getAllTrendingTvShows(): Call<TrendingTvShowsList>
+
 }
-//fun getNews(@Query("category") category: String): NewsServiceModel

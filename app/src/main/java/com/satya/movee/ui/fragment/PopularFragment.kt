@@ -11,7 +11,7 @@ import com.satya.movee.R
 import com.satya.movee.Repositories.MoviesRepositories
 import com.satya.movee.databinding.FragmentPopularBinding
 import com.satya.movee.network.RetrofitInstance
-import com.satya.movee.viewmodel.MoviesViewModel.MoviesViewModel
+import com.satya.movee.viewmodel.ViewModel.MoviesViewModel
 import com.satya.movee.viewmodel.ViewModelFactory.ViewModelFactory
 
 class PopularFragment : Fragment() {

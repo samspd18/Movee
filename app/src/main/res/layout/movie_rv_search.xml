@@ -30,7 +30,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/ratingTv"
+                android:id="@+id/rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
@@ -47,9 +47,10 @@
                 android:id="@+id/movieName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/_12sdp"
                 android:fontFamily="@font/alice"
                 android:text="Movie name"
+                android:layout_marginStart="@dimen/_5sdp"
                 android:textColor="@color/golden_yellow"
                 android:textSize="@dimen/_17ssp"
                 android:textStyle="bold"

@@ -93,7 +93,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tagline" />
 
             <TextView
-                android:id="@+id/ratingTv"
+                android:id="@+id/rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -115,9 +115,9 @@
                 android:text="Release Date: 0000-00-00"
                 android:textColor="@color/golden_yellow"
                 android:textSize="@dimen/_14ssp"
-                app:layout_constraintBottom_toBottomOf="@+id/ratingTv"
-                app:layout_constraintStart_toEndOf="@+id/ratingTv"
-                app:layout_constraintTop_toTopOf="@+id/ratingTv"
+                app:layout_constraintBottom_toBottomOf="@+id/rating"
+                app:layout_constraintStart_toEndOf="@+id/rating"
+                app:layout_constraintTop_toTopOf="@+id/rating"
                 app:layout_constraintVertical_bias="1.0" />
 
             <TextView
@@ -129,10 +129,10 @@
                 android:text="0 min"
                 android:textColor="@color/golden_yellow"
                 android:textSize="@dimen/_14ssp"
-                app:layout_constraintEnd_toEndOf="@+id/ratingTv"
+                app:layout_constraintEnd_toEndOf="@+id/rating"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/ratingTv"
-                app:layout_constraintTop_toBottomOf="@+id/ratingTv" />
+                app:layout_constraintStart_toStartOf="@+id/rating"
+                app:layout_constraintTop_toBottomOf="@+id/rating" />
 
             <TextView
                 android:id="@+id/geners"

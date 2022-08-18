@@ -21,7 +21,7 @@ import com.satya.movee.ui.adapter.MovieAdapter
 import com.satya.movee.ui.adapter.MovieAllTimeFavoriteAdapter
 import com.satya.movee.ui.adapter.MovieLatestAdapter
 import com.satya.movee.ui.adapter.MoviePopularAdapter
-import com.satya.movee.viewmodel.MoviesViewModel.MoviesViewModel
+import com.satya.movee.viewmodel.ViewModel.MoviesViewModel
 import com.satya.movee.viewmodel.ViewModelFactory.ViewModelFactory
 import kotlin.random.Random
 

@@ -3,7 +3,7 @@ package com.satya.movee.viewmodel.ViewModelFactory
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.satya.movee.Repositories.MoviesRepositories
-import com.satya.movee.viewmodel.MoviesViewModel.MoviesViewModel
+import com.satya.movee.viewmodel.ViewModel.MoviesViewModel
 
 class ViewModelFactory constructor(private val repository: MoviesRepositories) :
     ViewModelProvider.Factory {

@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView">
 
         <EditText
-            android:id="@+id/searchTv"
+            android:id="@+id/search"
             android:layout_width="@dimen/_220sdp"
             android:layout_height="match_parent"
             android:hint="Search Content..."

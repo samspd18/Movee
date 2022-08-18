@@ -19,7 +19,7 @@ import com.satya.movee.databinding.FragmentMovieDetailBinding
 import com.satya.movee.network.RetrofitInstance
 import com.satya.movee.ui.adapter.MovieAdapter
 import com.satya.movee.ui.adapter.MovieCreditsAdapter
-import com.satya.movee.viewmodel.MoviesViewModel.MoviesViewModel
+import com.satya.movee.viewmodel.ViewModel.MoviesViewModel
 import com.satya.movee.viewmodel.ViewModelFactory.ViewModelFactory
 
 

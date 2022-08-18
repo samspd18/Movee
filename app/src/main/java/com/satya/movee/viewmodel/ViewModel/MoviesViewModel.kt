@@ -1,9 +1,11 @@
-package com.satya.movee.viewmodel.MoviesViewModel
+package com.satya.movee.viewmodel.ViewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.satya.movee.Repositories.MoviesRepositories
+import com.satya.movee.constants.Constant.Companion.apiCallFinished
+import com.satya.movee.constants.Constant.Companion.duringTheApiCall
 import com.satya.movee.model.search.movie.SearchMovieModel
 import com.satya.movee.model.trendingMovies.*
 import kotlinx.coroutines.Dispatchers
@@ -27,12 +29,12 @@ class MoviesViewModel (private val repository: MoviesRepositories): ViewModel() 
     var isLoading = MutableLiveData<Boolean>()
 
     //show and hide loader
-    private fun apiCallFinished() {
-        isLoading.postValue(true)
-    }
-    private fun duringTheApiCall() {
-        isLoading.postValue(false)
-    }
+//    private fun apiCallFinished() {
+//        isLoading.postValue(true)
+//    }
+//    private fun duringTheApiCall() {
+//        isLoading.postValue(false)
+//    }
 
     fun getAllTrendingMovies() {
         duringTheApiCall()
