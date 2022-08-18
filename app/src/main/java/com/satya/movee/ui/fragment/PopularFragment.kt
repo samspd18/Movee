@@ -12,7 +12,7 @@ import com.satya.movee.Repositories.MoviesRepositories
 import com.satya.movee.databinding.FragmentPopularBinding
 import com.satya.movee.network.RetrofitInstance
 import com.satya.movee.viewmodel.ViewModel.MoviesViewModel
-import com.satya.movee.viewmodel.ViewModelFactory.ViewModelFactory
+import com.satya.movee.viewmodel.ViewModelFactory.MoviesViewModelFactory
 
 class PopularFragment : Fragment() {
 
@@ -32,7 +32,7 @@ class PopularFragment : Fragment() {
 
         _binding = FragmentPopularBinding.inflate(inflater, container, false)
 
-        viewModel = ViewModelProvider(this, ViewModelFactory(MoviesRepositories(retrofitService)))[MoviesViewModel::class.java]
+        viewModel = ViewModelProvider(this, MoviesViewModelFactory(MoviesRepositories(retrofitService)))[MoviesViewModel::class.java]
         val root: View = binding.root
 
 

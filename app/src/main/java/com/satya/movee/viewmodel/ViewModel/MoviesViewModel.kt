@@ -29,9 +29,9 @@ class MoviesViewModel (private val repository: MoviesRepositories): ViewModel() 
     var isLoading = MutableLiveData<Boolean>()
 
     //show and hide loader
-//    private fun apiCallFinished() {
-//        isLoading.postValue(true)
-//    }
+    private fun apiCallFinished() {
+        isLoading.postValue(true)
+    }
 //    private fun duringTheApiCall() {
 //        isLoading.postValue(false)
 //    }

@@ -22,7 +22,7 @@ import com.satya.movee.ui.adapter.MovieAllTimeFavoriteAdapter
 import com.satya.movee.ui.adapter.MovieLatestAdapter
 import com.satya.movee.ui.adapter.MoviePopularAdapter
 import com.satya.movee.viewmodel.ViewModel.MoviesViewModel
-import com.satya.movee.viewmodel.ViewModelFactory.ViewModelFactory
+import com.satya.movee.viewmodel.ViewModelFactory.MoviesViewModelFactory
 import kotlin.random.Random
 
 class MovieFragment : Fragment() {
@@ -51,7 +51,7 @@ class MovieFragment : Fragment() {
         _binding = FragmentMovieBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        viewModel = ViewModelProvider(this, ViewModelFactory(MoviesRepositories(retrofitService)))[MoviesViewModel::class.java]
+        viewModel = ViewModelProvider(this, MoviesViewModelFactory(MoviesRepositories(retrofitService)))[MoviesViewModel::class.java]
 
         getAllTrendingMovies()
         getAllLatestMovies()

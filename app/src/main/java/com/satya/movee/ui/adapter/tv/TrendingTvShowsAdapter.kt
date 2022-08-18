@@ -1,4 +1,4 @@
-package com.satya.movee.ui.adapter
+package com.satya.movee.ui.adapter.tv
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,12 +10,13 @@ import com.satya.movee.R
 import com.satya.movee.constants.Constant
 import com.satya.movee.databinding.MovieRvLayoutBinding
 import com.satya.movee.model.trendingMovies.Result
+import com.satya.movee.ui.adapter.ViewHolder
 
-class MovieAdapter: RecyclerView.Adapter<ViewHolder>() {
+class TrendingTvShowsAdapter : RecyclerView.Adapter<ViewHolder>() {
 
-    private var movies = mutableListOf<Result?>()
+    private var movies = mutableListOf<com.satya.movee.model.trendingTvShows.Result?>()
 
-    fun setMovieList(movies: List<Result?>?) {
+    fun setMovieList(movies: List<com.satya.movee.model.trendingTvShows.Result?>?) {
         this.movies = movies!!.toMutableList()
         notifyDataSetChanged()
     }

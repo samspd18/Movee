@@ -12,7 +12,7 @@ import com.satya.movee.databinding.FragmentSearchMovieBinding
 import com.satya.movee.network.RetrofitInstance
 import com.satya.movee.ui.adapter.SearchAdapter
 import com.satya.movee.viewmodel.ViewModel.MoviesViewModel
-import com.satya.movee.viewmodel.ViewModelFactory.ViewModelFactory
+import com.satya.movee.viewmodel.ViewModelFactory.MoviesViewModelFactory
 
 class SearchMovieFragment : Fragment() {
 
@@ -31,7 +31,7 @@ class SearchMovieFragment : Fragment() {
         // return inflater.inflate(R.layout.fragment_search, container, false)
         _binding = FragmentSearchMovieBinding.inflate(inflater, container, false)
 
-        viewModel = ViewModelProvider(this, ViewModelFactory(MoviesRepositories(retrofitService)))[MoviesViewModel::class.java]
+        viewModel = ViewModelProvider(this, MoviesViewModelFactory(MoviesRepositories(retrofitService)))[MoviesViewModel::class.java]
 
         getAllSearchData()
 

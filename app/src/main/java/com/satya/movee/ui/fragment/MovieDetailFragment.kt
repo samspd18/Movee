@@ -20,7 +20,7 @@ import com.satya.movee.network.RetrofitInstance
 import com.satya.movee.ui.adapter.MovieAdapter
 import com.satya.movee.ui.adapter.MovieCreditsAdapter
 import com.satya.movee.viewmodel.ViewModel.MoviesViewModel
-import com.satya.movee.viewmodel.ViewModelFactory.ViewModelFactory
+import com.satya.movee.viewmodel.ViewModelFactory.MoviesViewModelFactory
 
 
 class MovieDetailFragment : Fragment() {
@@ -39,7 +39,7 @@ class MovieDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMovieDetailBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this, ViewModelFactory(MoviesRepositories(retrofitService)))[MoviesViewModel::class.java]
+        viewModel = ViewModelProvider(this, MoviesViewModelFactory(MoviesRepositories(retrofitService)))[MoviesViewModel::class.java]
 
         movie_id = arguments?.getInt("id")!!
 
