@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.satya.movee.ui.fragment.MovieFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_movie" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_detail"
+            app:destination="@id/navigation_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.satya.movee.ui.fragment.TvFragment"
+        android:label="@string/title_tv"
+        tools:layout="@layout/fragment_tv" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.satya.movee.ui.fragment.PopularFragment"
+        android:label="@string/title_popular"
+        tools:layout="@layout/fragment_popular" />
+
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="com.satya.movee.ui.fragment.MovieDetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_movie_detail" >
+        <action
+            android:id="@+id/action_navigation_detail_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_detail_to_navigation_youtube_player"
+            app:destination="@id/navigation_youtube_player" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_youtube_player"
+        android:name="com.satya.movee.ui.fragment.YoutubeVideoFragment"
+        android:label="Video"
+        tools:layout="@layout/fragment_youtube_video">
+        <action
+            android:id="@+id/action_navigation_youtube_player_to_navigation_detail"
+            app:destination="@id/navigation_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.satya.movee.ui.fragment.SearchMovieFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search_movie" />
+</navigation>
