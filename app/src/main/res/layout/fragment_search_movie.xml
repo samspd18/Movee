@@ -32,7 +32,7 @@
             android:id="@+id/search"
             android:layout_width="@dimen/_220sdp"
             android:layout_height="match_parent"
-            android:hint="Search Content..."
+            android:hint="Search Movies..."
             android:paddingStart="@dimen/_10sdp"
             android:textColor="@color/golden_yellow"
             android:textColorHint="@color/golden_yellow"

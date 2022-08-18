@@ -78,12 +78,12 @@ class TvFragment : Fragment() {
             "Trending in #${index+1}".also { binding.trendingPositionTv.text = it }
             val id = it.results[index]?.id!!
 
-            binding.infoTv.setOnClickListener {
-                val bundle = Bundle()
-                bundle.putInt("id",id)
-                val nav = binding.root.findNavController()
-                nav.navigate(R.id.navigation_detail,bundle)
-            }
+//            binding.infoTv.setOnClickListener {
+//                val bundle = Bundle()
+//                bundle.putInt("id",id)
+//                val nav = binding.root.findNavController()
+//                nav.navigate(R.id.navigation_detail,bundle)
+//            }
             val rating = String.format("%.1f", it.results[index]?.voteAverage).toDouble() / 2
             "Rating: $rating / 5".also { binding.ratingTv.text = it }
             adapter.setMovieList(it.results)

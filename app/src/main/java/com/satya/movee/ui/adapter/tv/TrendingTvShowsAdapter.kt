@@ -39,13 +39,13 @@ class TrendingTvShowsAdapter : RecyclerView.Adapter<ViewHolder>() {
             .into(holder.binding.trendingMovie)
 
         holder.id = movies[position]?.id!!
-        val bundle = Bundle()
-        bundle.putInt("id",holder.id)
-
-        holder.itemView.setOnClickListener {
-            val nav = holder.binding.root.findNavController()
-            nav.navigate(R.id.navigation_detail,bundle)
-        }
+//        val bundle = Bundle()
+//        bundle.putInt("id",holder.id)
+//
+//        holder.itemView.setOnClickListener {
+//            val nav = holder.binding.root.findNavController()
+//            nav.navigate(R.id.navigation_detail,bundle)
+//        }
     }
 
     override fun getItemCount(): Int {
