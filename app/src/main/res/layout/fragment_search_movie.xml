@@ -9,7 +9,7 @@
     android:background="@color/black">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/searchBack"
         android:layout_width="@dimen/_28sdp"
         android:layout_height="@dimen/_28sdp"
         android:layout_marginStart="@dimen/_8sdp"
@@ -24,15 +24,14 @@
         android:layout_height="@dimen/_35sdp"
         android:layout_marginStart="@dimen/_5sdp"
         app:cardCornerRadius="@dimen/_5sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView">
+        app:layout_constraintBottom_toBottomOf="@+id/searchBack"
+        app:layout_constraintStart_toEndOf="@+id/searchBack"
+        app:layout_constraintTop_toTopOf="@+id/searchBack">
 
         <EditText
             android:id="@+id/search"
-            android:layout_width="@dimen/_220sdp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Search Movies..."
             android:paddingStart="@dimen/_10sdp"
             android:textColor="@color/golden_yellow"
             android:textColorHint="@color/golden_yellow"
@@ -44,6 +43,7 @@
             android:layout_width="@dimen/_25sdp"
             android:layout_height="match_parent"
             android:layout_gravity="end"
+            android:visibility="gone"
             android:layout_marginEnd="@dimen/_3sdp"
             android:src="@drawable/searchicon" />
     </androidx.cardview.widget.CardView>
@@ -60,7 +60,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/cardView2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/searchBack"
         app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -70,7 +70,7 @@
         android:layout_marginTop="@dimen/_80sdp"
         android:layout_marginHorizontal="@dimen/_5sdp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/searchBack"
         tools:layout_editor_absoluteX="0dp"
         tools:listitem="@layout/movie_rv_search" />
 

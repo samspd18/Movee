@@ -6,3 +6,6 @@ import com.satya.movee.databinding.MovieRvLayoutBinding
 class ViewHolder(val binding: MovieRvLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
     var id: Int = 0
 }
+class TvViewHolder(val binding: MovieRvLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
+    var id: Int = 0
+}

@@ -66,8 +66,11 @@ class MovieFragment : Fragment() {
         viewModel.getAllPopularMovies()
 
         binding.search.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("media-type","movie")
+
             val nav = findNavController()
-            nav.navigate(R.id.navigation_search)
+            nav.navigate(R.id.navigation_search,bundle)
         }
 
 

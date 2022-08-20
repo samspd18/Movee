@@ -2,6 +2,7 @@ package com.satya.movee.network
 
 import com.satya.movee.constants.Constant.Companion.apiKey
 import com.satya.movee.model.search.movie.SearchMovieModel
+import com.satya.movee.model.search.tv.TvSearchModel
 import com.satya.movee.model.trendingMovies.MovieCredits
 import com.satya.movee.model.trendingMovies.MovieDetailModel
 import com.satya.movee.model.trendingMovies.MovieVideo
@@ -54,4 +55,19 @@ interface RetrofitService {
     @GET("trending/tv/week?api_key=${apiKey}&region=IN")
     fun getAllTrendingTvShows(): Call<TrendingTvShowsList>
 
+    //search tv
+    @GET("search/tv?api_key=${apiKey}&language=en-US&page=1&include_adult=false&region=IN")
+    fun getSearchResultTv(@Query("query") query: String): Call<TvSearchModel>
+
+    //tv shows airing today
+    @GET("tv/airing_today?api_key=${apiKey}&language=en-US&page=1")
+    fun getAllAiringTodayShows(): Call<TrendingTvShowsList>
+
+    //top rated tv shows
+    @GET("tv/top_rated?api_key=${apiKey}&language=en-US&page=1")
+    fun getTopRatedTvShows(): Call<TrendingTvShowsList>
+
+    //popular tv series
+    @GET("tv/popular?api_key=${apiKey}&language=en-US&page=1")
+    fun getPopularTvSeries(): Call<TrendingTvShowsList>
 }

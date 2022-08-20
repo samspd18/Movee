@@ -1,4 +1,4 @@
-package com.satya.movee.ui.adapter
+package com.satya.movee.ui.adapter.tv
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,18 +7,18 @@ import com.bumptech.glide.Glide
 import com.satya.movee.R
 import com.satya.movee.constants.Constant
 import com.satya.movee.databinding.MovieRvSearchBinding
+import com.satya.movee.ui.adapter.SearchAdapter
 
+class TvShowsSearchAdapter : RecyclerView.Adapter<TvShowsSearchAdapter.ViewHolder>() {
 
-class SearchAdapter: RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
+    private var movies = mutableListOf<com.satya.movee.model.search.tv.Result?>()
 
-    private var movies = mutableListOf<com.satya.movee.model.search.movie.Result?>()
-
-    fun setSearchData(movies: List<com.satya.movee.model.search.movie.Result?>?) {
+    fun setSearchData(movies: List<com.satya.movee.model.search.tv.Result?>?) {
         this.movies = movies!!.toMutableList()
         this.notifyDataSetChanged()
 
     }
-        class ViewHolder(val binding: MovieRvSearchBinding) : RecyclerView.ViewHolder(binding.root)
+    class ViewHolder(val binding: MovieRvSearchBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -38,7 +38,7 @@ class SearchAdapter: RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
             .placeholder(R.drawable.logo)
             .into(holder.binding.moviePoster)
 
-        holder.binding.movieName.text = movie?.title
+        holder.binding.movieName.text = movie?.name
         "${movie?.voteAverage} / 10".also { holder.binding.rating.text = it }
 
     }

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.satya.movee.R
@@ -15,7 +16,7 @@ import com.satya.movee.constants.Constant
 import com.satya.movee.databinding.FragmentTvBinding
 import com.satya.movee.network.RetrofitInstance
 import com.satya.movee.ui.adapter.MovieAdapter
-import com.satya.movee.ui.adapter.tv.TrendingTvShowsAdapter
+import com.satya.movee.ui.adapter.tv.*
 import com.satya.movee.viewmodel.ViewModel.MoviesViewModel
 import com.satya.movee.viewmodel.ViewModel.TvShowsViewModel
 import com.satya.movee.viewmodel.ViewModelFactory.MoviesViewModelFactory
@@ -31,6 +32,9 @@ class TvFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val adapter = TrendingTvShowsAdapter()
+    private val tvShowsAirAdapter = TvShowsAirToday()
+    private val topRatedSeries = TopRatedInIMDBAdapter()
+    private val popularTvSeriesAdapter = PopularTvSeriesAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,9 +46,23 @@ class TvFragment : Fragment() {
 
         viewModel = ViewModelProvider(this, TvViewModelFactory(MoviesRepositories(retrofitService)))[TvShowsViewModel::class.java]
 
+        binding.searchTv.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("media-type","tv")
+
+            val nav = findNavController()
+            nav.navigate(R.id.navigation_search,bundle)
+        }
+
         getAllTrendingTvShows()
+        getTvShowsAiringToday()
+        getTopRatedSeries()
+        getPopularTvSeries()
 
         viewModel.getAllTrendingTvShows()
+        viewModel.getTVShowsAirToday()
+        viewModel.getTopRatedShowsInIMDB()
+        viewModel.getPopularTvSeries()
 
         loadLoader()
         return root
@@ -89,6 +107,26 @@ class TvFragment : Fragment() {
             adapter.setMovieList(it.results)
         }
 
+    }
+    private fun getTvShowsAiringToday() {
+        binding.latestRecyclerView.adapter = tvShowsAirAdapter
+        viewModel.tvSeriesAirToday.observe(viewLifecycleOwner) {
+            tvShowsAirAdapter.setLatestAirShows(it.results)
+        }
+    }
+
+    private fun getTopRatedSeries() {
+        binding.allTImeFavoriteMoviesRecyclerview.adapter = topRatedSeries
+        viewModel.topRatedSeries.observe(viewLifecycleOwner) {
+            topRatedSeries.setTopRatedTvShows(it.results)
+        }
+    }
+
+    private fun getPopularTvSeries() {
+        binding.popularMoviesRecyclerView.adapter = popularTvSeriesAdapter
+        viewModel.getPopularSeries.observe(viewLifecycleOwner) {
+            popularTvSeriesAdapter.setPopularTvSeries(it.results)
+        }
     }
 
     override fun onResume() {

@@ -10,7 +10,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/black"
-    tools:context=".ui.fragment.TvFragment">
+    tools:context=".ui.fragment.TvFragment"
+    android:paddingBottom="?attr/actionBarSize">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/inner_layout"
@@ -125,7 +126,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_6sdp"
             android:fontFamily="@font/alice"
-            android:text="@string/latest_shows"
+            android:text="Airing Today"
             android:textColor="@color/golden_yellow"
             android:textSize="@dimen/_18ssp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -151,13 +152,14 @@
             android:id="@+id/topRated"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/alice"
-            android:text="@string/all_time_favorite"
+            android:text="High Rated in IMDB"
             android:textColor="@color/golden_yellow"
             android:textSize="@dimen/_18ssp"
             app:layout_constraintEnd_toEndOf="@+id/latestRecyclerView"
-            app:layout_constraintHorizontal_bias="0.144"
+            app:layout_constraintHorizontal_bias="0.086"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/latestRecyclerView" />
 
@@ -179,14 +181,15 @@
             android:id="@+id/popular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_1sdp"
             android:layout_marginTop="@dimen/_6sdp"
             android:fontFamily="@font/alice"
             android:text="@string/popular"
             android:textColor="@color/golden_yellow"
             android:textSize="@dimen/_18ssp"
             app:layout_constraintEnd_toEndOf="@+id/allTImeFavoriteMoviesRecyclerview"
-            app:layout_constraintHorizontal_bias="0.36"
-            app:layout_constraintStart_toStartOf="@+id/allTImeFavoriteMoviesRecyclerview"
+            app:layout_constraintHorizontal_bias="0.052"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/allTImeFavoriteMoviesRecyclerview" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -194,11 +197,12 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_120sdp"
             android:layout_marginHorizontal="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal"
             android:visibility="visible"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="@+id/popular"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/popular"
             app:layout_constraintTop_toBottomOf="@+id/popular"
             tools:listitem="@layout/movie_rv_layout" />
