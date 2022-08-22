@@ -11,6 +11,8 @@ import com.satya.movee.R
 import com.satya.movee.Repositories.MoviesRepositories
 import com.satya.movee.databinding.FragmentPopularBinding
 import com.satya.movee.network.RetrofitInstance
+import com.satya.movee.ui.adapter.popular.PopularPersonAdapter
+import com.satya.movee.ui.adapter.popular.UpCominGMoviesAdapter
 import com.satya.movee.viewmodel.ViewModel.MoviesViewModel
 import com.satya.movee.viewmodel.ViewModel.PopularViewModel
 import com.satya.movee.viewmodel.ViewModel.TvShowsViewModel
@@ -27,21 +29,39 @@ class PopularFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var navBar: BottomNavigationView
 
+    private var popularPersonAdapter = PopularPersonAdapter()
+    private var upComingAdapter = UpCominGMoviesAdapter()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-//        val notificationsViewModel =
-//            ViewModelProvider(this)[MoviesViewModel::class.java]
-
         _binding = FragmentPopularBinding.inflate(inflater, container, false)
-
         viewModel = ViewModelProvider(this, PopularViewModelFacory(MoviesRepositories(retrofitService)))[PopularViewModel::class.java]
 
+        val pageNumber : Int = (1..45).random()
+        popularPerson()
+        upComingMovies()
 
+        viewModel.getAllPopularPerson(pageNumber)
+        viewModel.getUpcomingMovies()
 
         return binding.root
+    }
+
+    private fun upComingMovies() {
+        binding.upcomingMovieRecyclerView.adapter = upComingAdapter
+        viewModel.getUpcomingMovies.observe(viewLifecycleOwner) {
+            upComingAdapter.setMovieList(it.results)
+        }
+    }
+
+    private fun popularPerson() {
+        binding.popularRecyclerView.adapter = popularPersonAdapter
+        viewModel.popularPerson.observe(viewLifecycleOwner) {
+            popularPersonAdapter.setPopularPeople(it.results)
+        }
     }
 
     override fun onResume() {

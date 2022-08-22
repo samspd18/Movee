@@ -1,6 +1,7 @@
 package com.satya.movee.network
 
 import com.satya.movee.constants.Constant.Companion.apiKey
+import com.satya.movee.model.popular.PopularPersonModel
 import com.satya.movee.model.search.movie.SearchMovieModel
 import com.satya.movee.model.search.tv.TvSearchModel
 import com.satya.movee.model.trendingMovies.MovieCredits
@@ -85,4 +86,11 @@ interface RetrofitService {
     //get tv series video
     @GET("tv/{tv_id}/videos?api_key=${apiKey}&language=en-US")
     fun getSeriesVideo(@Path("tv_id") tv_id: Int): Call<TvSeriesVideo>
+
+    //popular person
+    @GET("person/popular?api_key=${apiKey}&language=en-US")
+    fun getPopularPerson(@Query("page") page: Int): Call<PopularPersonModel>
+
+    @GET("movie/upcoming?api_key=${apiKey}&region=IN")
+    fun getUpcomingMovies(): Call<TrendingMovieList>
 }

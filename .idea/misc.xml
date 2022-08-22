@@ -8,6 +8,7 @@
         <entry key="..\:/Android Project/Movee/app/src/main/res/drawable/ic_baseline_play_circle_outline_24.xml" value="0.159" />
         <entry key="..\:/Android Project/Movee/app/src/main/res/drawable/play_arrow.xml" value="0.1185" />
         <entry key="..\:/Android Project/Movee/app/src/main/res/layout-land/fragment_tv.xml" value="0.40540540540540543" />
+        <entry key="..\:/Android Project/Movee/app/src/main/res/layout-land/popularrvlayout.xml" value="0.4171875" />
         <entry key="..\:/Android Project/Movee/app/src/main/res/layout-sw600dp/fragment_tv.xml" value="0.17578125" />
         <entry key="..\:/Android Project/Movee/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Android Project/Movee/app/src/main/res/layout/activity_splash_screen.xml" value="0.234375" />
@@ -16,6 +17,7 @@
         <entry key="..\:/Android Project/Movee/app/src/main/res/layout/fragment_home.xml" value="0.21481481481481482" />
         <entry key="..\:/Android Project/Movee/app/src/main/res/layout/fragment_movie.xml" value="0.234375" />
         <entry key="..\:/Android Project/Movee/app/src/main/res/layout/fragment_movie_detail.xml" value="0.2" />
+        <entry key="..\:/Android Project/Movee/app/src/main/res/layout/fragment_popular.xml" value="0.2" />
         <entry key="..\:/Android Project/Movee/app/src/main/res/layout/fragment_search.xml" value="0.2" />
         <entry key="..\:/Android Project/Movee/app/src/main/res/layout/fragment_search_movie.xml" value="0.264" />
         <entry key="..\:/Android Project/Movee/app/src/main/res/layout/fragment_series_detail.xml" value="0.25" />
@@ -23,6 +25,8 @@
         <entry key="..\:/Android Project/Movee/app/src/main/res/layout/fragment_youtube_video.xml" value="0.25" />
         <entry key="..\:/Android Project/Movee/app/src/main/res/layout/movie_rv_layout.xml" value="0.24895833333333334" />
         <entry key="..\:/Android Project/Movee/app/src/main/res/layout/movie_rv_search.xml" value="0.24895833333333334" />
+        <entry key="..\:/Android Project/Movee/app/src/main/res/layout/popularrvlayout.xml" value="0.2" />
+        <entry key="..\:/Android Project/Movee/app/src/main/res/layout/upcomingrvlayout.xml" value="0.24895833333333334" />
         <entry key="..\:/Android Project/Movee/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
       </map>
     </option>

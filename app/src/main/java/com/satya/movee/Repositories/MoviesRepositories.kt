@@ -23,4 +23,8 @@ class MoviesRepositories constructor(private val retrofitService: RetrofitServic
     fun getSeriesDetail(tv_id: Int) = retrofitService.getSeriesDetail(tv_id)
     fun getSeriesCast(tv_id: Int) = retrofitService.getSeriesCast(tv_id)
     fun getSeriesVideo(tv_id: Int) = retrofitService.getSeriesVideo(tv_id)
+
+    //popular
+    fun getPopularPersons(page: Int) = retrofitService.getPopularPerson(page)
+    fun getUpcomingMovies() = retrofitService.getUpcomingMovies()
 }
