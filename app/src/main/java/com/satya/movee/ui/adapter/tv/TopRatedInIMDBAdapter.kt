@@ -42,7 +42,7 @@ class TopRatedInIMDBAdapter : RecyclerView.Adapter<TvViewHolder>() {
 
         holder.itemView.setOnClickListener {
             val nav = holder.binding.root.findNavController()
-            nav.navigate(R.id.navigation_detail,bundle)
+            nav.navigate(R.id.navigation_tv_series_detail,bundle)
         }
     }
 

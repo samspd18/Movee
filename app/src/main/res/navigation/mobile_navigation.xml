@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.satya.movee.ui.fragment.MovieFragment"
+        android:name="com.satya.movee.ui.fragment.movie.MovieFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_movie" >
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.satya.movee.ui.fragment.TvFragment"
+        android:name="com.satya.movee.ui.fragment.tv.TvFragment"
         android:label="@string/title_tv"
         tools:layout="@layout/fragment_tv" />
 
@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/navigation_detail"
-        android:name="com.satya.movee.ui.fragment.MovieDetailFragment"
+        android:name="com.satya.movee.ui.fragment.movie.MovieDetailFragment"
         android:label="Detail"
         tools:layout="@layout/fragment_movie_detail" >
         <action
@@ -52,7 +52,13 @@
 
     <fragment
         android:id="@+id/navigation_search"
-        android:name="com.satya.movee.ui.fragment.SearchMovieFragment"
+        android:name="com.satya.movee.ui.fragment.search.SearchMovieFragment"
         android:label="Search"
         tools:layout="@layout/fragment_search_movie" />
+
+    <fragment
+        android:id="@+id/navigation_tv_series_detail"
+        android:name="com.satya.movee.ui.fragment.tv.SeriesDetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_series_detail" />
 </navigation>

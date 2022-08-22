@@ -32,11 +32,13 @@ class PopularFragment : Fragment() {
 
         _binding = FragmentPopularBinding.inflate(inflater, container, false)
 
-        viewModel = ViewModelProvider(this, MoviesViewModelFactory(MoviesRepositories(retrofitService)))[MoviesViewModel::class.java]
-        val root: View = binding.root
+        viewModel = ViewModelProvider(
+            this,
+            MoviesViewModelFactory(MoviesRepositories(retrofitService))
+        )[MoviesViewModel::class.java]
 
 
-        return root
+        return binding.root
     }
 
     override fun onResume() {

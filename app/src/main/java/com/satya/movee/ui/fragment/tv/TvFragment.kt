@@ -1,4 +1,4 @@
-package com.satya.movee.ui.fragment
+package com.satya.movee.ui.fragment.tv
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,11 +15,8 @@ import com.satya.movee.Repositories.MoviesRepositories
 import com.satya.movee.constants.Constant
 import com.satya.movee.databinding.FragmentTvBinding
 import com.satya.movee.network.RetrofitInstance
-import com.satya.movee.ui.adapter.MovieAdapter
 import com.satya.movee.ui.adapter.tv.*
-import com.satya.movee.viewmodel.ViewModel.MoviesViewModel
 import com.satya.movee.viewmodel.ViewModel.TvShowsViewModel
-import com.satya.movee.viewmodel.ViewModelFactory.MoviesViewModelFactory
 import com.satya.movee.viewmodel.ViewModelFactory.TvViewModelFactory
 import kotlin.random.Random
 
@@ -91,17 +88,17 @@ class TvFragment : Fragment() {
             val index = Random.nextInt(0,it?.results!!.size - 1)
             Glide.with(this)
                 .load(Constant.imageBaseUrl + it.results[index]?.posterPath)
-                .placeholder(R.drawable.black_background)
+                .placeholder(R.drawable.logo)
                 .into(binding.MainPosterTv)
             "Trending in #${index+1}".also { binding.trendingPositionTv.text = it }
             val id = it.results[index]?.id!!
 
-//            binding.infoTv.setOnClickListener {
-//                val bundle = Bundle()
-//                bundle.putInt("id",id)
-//                val nav = binding.root.findNavController()
-//                nav.navigate(R.id.navigation_detail,bundle)
-//            }
+            binding.infoTv.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putInt("id",id)
+                val nav = binding.root.findNavController()
+                nav.navigate(R.id.navigation_tv_series_detail,bundle)
+            }
             val rating = String.format("%.1f", it.results[index]?.voteAverage).toDouble() / 2
             "Rating: $rating / 5".also { binding.ratingTv.text = it }
             adapter.setMovieList(it.results)

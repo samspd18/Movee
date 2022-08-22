@@ -1,4 +1,4 @@
-package com.satya.movee.ui.adapter
+package com.satya.movee.ui.adapter.movies
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,17 +10,20 @@ import com.satya.movee.R
 import com.satya.movee.constants.Constant
 import com.satya.movee.databinding.MovieRvLayoutBinding
 import com.satya.movee.model.trendingMovies.Result
+import com.satya.movee.ui.adapter.ViewHolder
 
-class MovieAllTimeFavoriteAdapter : RecyclerView.Adapter<ViewHolder>() {
+class MovieAdapter: RecyclerView.Adapter<ViewHolder>() {
 
     private var movies = mutableListOf<Result?>()
 
-    fun setAllTimeFavoriteMovies(movies: List<Result?>?) {
+    fun setMovieList(movies: List<Result?>?) {
         this.movies = movies!!.toMutableList()
         notifyDataSetChanged()
     }
 
-   // class ViewHolder(val binding: MovieRvLayoutBinding) : RecyclerView.ViewHolder(binding.root)
+//     class ViewHolder(val binding: MovieRvLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
+//         var id: Int = 0
+//     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)

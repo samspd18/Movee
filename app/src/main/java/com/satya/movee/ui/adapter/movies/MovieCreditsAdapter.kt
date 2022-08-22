@@ -1,4 +1,4 @@
-package com.satya.movee.ui.adapter
+package com.satya.movee.ui.adapter.movies
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -20,4 +20,5 @@ class MoviesRepositories constructor(private val retrofitService: RetrofitServic
     fun getTvShowsAirToday() = retrofitService.getAllAiringTodayShows()
     fun getTopRatedShows() = retrofitService.getTopRatedTvShows()
     fun getPopularTvSeries() = retrofitService.getPopularTvSeries()
+    fun getSeriesDetail(tv_id: Int) = retrofitService.getSeriesDetail(tv_id)
 }

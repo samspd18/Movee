@@ -8,6 +8,7 @@ import com.satya.movee.model.trendingMovies.MovieDetailModel
 import com.satya.movee.model.trendingMovies.MovieVideo
 import com.satya.movee.model.trendingMovies.TrendingMovieList
 import com.satya.movee.model.trendingTvShows.TrendingTvShowsList
+import com.satya.movee.model.trendingTvShows.TvSeriesDetail
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -70,4 +71,8 @@ interface RetrofitService {
     //popular tv series
     @GET("tv/popular?api_key=${apiKey}&language=en-US&page=1")
     fun getPopularTvSeries(): Call<TrendingTvShowsList>
+
+    //get series detail
+    @GET("tv/{tv_id}?api_key=${apiKey}&language=en-US")
+    fun getSeriesDetail(@Path("tv_id") tv_id: Int): Call<TvSeriesDetail>
 }

@@ -1,4 +1,4 @@
-package com.satya.movee.ui.adapter
+package com.satya.movee.ui.adapter.movies
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +10,7 @@ import com.satya.movee.R
 import com.satya.movee.constants.Constant
 import com.satya.movee.databinding.MovieRvLayoutBinding
 import com.satya.movee.model.trendingMovies.Result
+import com.satya.movee.ui.adapter.ViewHolder
 
 class MoviePopularAdapter: RecyclerView.Adapter<ViewHolder>() {
 

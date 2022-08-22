@@ -9,9 +9,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/black"
-        tools:context=".ui.fragment.MovieDetailFragment">
+        tools:context=".ui.fragment.movie.MovieDetailFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/innerLayout"
@@ -32,7 +32,8 @@
                 android:src="@drawable/logo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/todo" />
 
             <View
                 android:id="@+id/view2"
@@ -53,7 +54,7 @@
                 android:layout_marginTop="@dimen/_8sdp"
                 android:fontFamily="@font/alice"
                 android:maxLines="3"
-                android:text="Movie Title"
+                android:text="@string/movie_title"
                 android:textColor="@color/golden_yellow"
                 android:textSize="@dimen/_20ssp"
                 android:textStyle="bold"

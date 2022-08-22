@@ -10,7 +10,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/black"
-    tools:context=".ui.fragment.TvFragment"
+    tools:context=".ui.fragment.tv.TvFragment"
     android:paddingBottom="?attr/actionBarSize">
 
     <androidx.constraintlayout.widget.ConstraintLayout

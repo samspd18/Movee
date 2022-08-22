@@ -1,4 +1,4 @@
-package com.satya.movee.ui.fragment
+package com.satya.movee.ui.fragment.search
 
 import android.os.Bundle
 import android.text.Editable

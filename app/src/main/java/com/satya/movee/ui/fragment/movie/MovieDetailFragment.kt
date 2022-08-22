@@ -1,4 +1,4 @@
-package com.satya.movee.ui.fragment
+package com.satya.movee.ui.fragment.movie
 
 import android.content.Intent
 import android.net.Uri
@@ -17,8 +17,8 @@ import com.satya.movee.constants.Constant
 import com.satya.movee.constants.Constant.Companion.youtubeVideoUrl
 import com.satya.movee.databinding.FragmentMovieDetailBinding
 import com.satya.movee.network.RetrofitInstance
-import com.satya.movee.ui.adapter.MovieAdapter
-import com.satya.movee.ui.adapter.MovieCreditsAdapter
+import com.satya.movee.ui.adapter.movies.MovieAdapter
+import com.satya.movee.ui.adapter.movies.MovieCreditsAdapter
 import com.satya.movee.viewmodel.ViewModel.MoviesViewModel
 import com.satya.movee.viewmodel.ViewModelFactory.MoviesViewModelFactory
 

@@ -9,6 +9,7 @@ import com.satya.movee.model.search.movie.SearchMovieModel
 import com.satya.movee.model.search.tv.TvSearchModel
 import com.satya.movee.model.trendingMovies.TrendingMovieList
 import com.satya.movee.model.trendingTvShows.TrendingTvShowsList
+import com.satya.movee.model.trendingTvShows.TvSeriesDetail
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Call
@@ -21,6 +22,7 @@ class TvShowsViewModel (private val repository: MoviesRepositories): ViewModel()
     val tvSeriesAirToday = MutableLiveData<TrendingTvShowsList>()
     val topRatedSeries = MutableLiveData<TrendingTvShowsList>()
     val getPopularSeries = MutableLiveData<TrendingTvShowsList>()
+    val getTvSeriesDetail = MutableLiveData<TvSeriesDetail>()
     val getSearchResultTv = MutableLiveData<TvSearchModel>()
     val errorMessage = MutableLiveData<String>()
     var isLoading = MutableLiveData<Boolean>()
@@ -93,6 +95,23 @@ class TvShowsViewModel (private val repository: MoviesRepositories): ViewModel()
                     getPopularSeries.postValue(response.body())
                 }
                 override fun onFailure(call: Call<TrendingTvShowsList>, t: Throwable) {
+                    apiCallFinished()
+                    errorMessage.postValue(t.message)
+                }
+            })
+        }
+    }
+
+    fun getTvSeriesDetail(tv_id: Int) {
+        duringTheApiCall()
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = repository.getSeriesDetail(tv_id)
+            response.enqueue(object : Callback<TvSeriesDetail> {
+                override fun onResponse(call: Call<TvSeriesDetail>, response: Response<TvSeriesDetail>) {
+                    apiCallFinished()
+                    getTvSeriesDetail.postValue(response.body())
+                }
+                override fun onFailure(call: Call<TvSeriesDetail>, t: Throwable) {
                     apiCallFinished()
                     errorMessage.postValue(t.message)
                 }

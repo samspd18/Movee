@@ -1,4 +1,4 @@
-package com.satya.movee.ui.fragment
+package com.satya.movee.ui.fragment.movie
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -17,10 +17,10 @@ import com.satya.movee.Repositories.MoviesRepositories
 import com.satya.movee.constants.Constant.Companion.imageBaseUrl
 import com.satya.movee.databinding.FragmentMovieBinding
 import com.satya.movee.network.RetrofitInstance
-import com.satya.movee.ui.adapter.MovieAdapter
-import com.satya.movee.ui.adapter.MovieAllTimeFavoriteAdapter
-import com.satya.movee.ui.adapter.MovieLatestAdapter
-import com.satya.movee.ui.adapter.MoviePopularAdapter
+import com.satya.movee.ui.adapter.movies.MovieAdapter
+import com.satya.movee.ui.adapter.movies.MovieAllTimeFavoriteAdapter
+import com.satya.movee.ui.adapter.movies.MovieLatestAdapter
+import com.satya.movee.ui.adapter.movies.MoviePopularAdapter
 import com.satya.movee.viewmodel.ViewModel.MoviesViewModel
 import com.satya.movee.viewmodel.ViewModelFactory.MoviesViewModelFactory
 import kotlin.random.Random
