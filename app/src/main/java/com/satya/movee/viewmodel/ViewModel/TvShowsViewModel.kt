@@ -9,7 +9,9 @@ import com.satya.movee.model.search.movie.SearchMovieModel
 import com.satya.movee.model.search.tv.TvSearchModel
 import com.satya.movee.model.trendingMovies.TrendingMovieList
 import com.satya.movee.model.trendingTvShows.TrendingTvShowsList
+import com.satya.movee.model.trendingTvShows.TvSeriesCast
 import com.satya.movee.model.trendingTvShows.TvSeriesDetail
+import com.satya.movee.model.trendingTvShows.video.TvSeriesVideo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Call
@@ -23,6 +25,8 @@ class TvShowsViewModel (private val repository: MoviesRepositories): ViewModel()
     val topRatedSeries = MutableLiveData<TrendingTvShowsList>()
     val getPopularSeries = MutableLiveData<TrendingTvShowsList>()
     val getTvSeriesDetail = MutableLiveData<TvSeriesDetail>()
+    val getTvSeriesCast = MutableLiveData<TvSeriesCast>()
+    val getTvSeriesVide = MutableLiveData<TvSeriesVideo>()
     val getSearchResultTv = MutableLiveData<TvSearchModel>()
     val errorMessage = MutableLiveData<String>()
     var isLoading = MutableLiveData<Boolean>()
@@ -112,6 +116,40 @@ class TvShowsViewModel (private val repository: MoviesRepositories): ViewModel()
                     getTvSeriesDetail.postValue(response.body())
                 }
                 override fun onFailure(call: Call<TvSeriesDetail>, t: Throwable) {
+                    apiCallFinished()
+                    errorMessage.postValue(t.message)
+                }
+            })
+        }
+    }
+
+    fun getTvSeriesCast(tv_id: Int) {
+        duringTheApiCall()
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = repository.getSeriesCast(tv_id)
+            response.enqueue(object : Callback<TvSeriesCast> {
+                override fun onResponse(call: Call<TvSeriesCast>, response: Response<TvSeriesCast>) {
+                    apiCallFinished()
+                    getTvSeriesCast.postValue(response.body())
+                }
+                override fun onFailure(call: Call<TvSeriesCast>, t: Throwable) {
+                    apiCallFinished()
+                    errorMessage.postValue(t.message)
+                }
+            })
+        }
+    }
+
+    fun getSeriesVideo(tv_id: Int) {
+        duringTheApiCall()
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = repository.getSeriesVideo(tv_id)
+            response.enqueue(object : Callback<TvSeriesVideo> {
+                override fun onResponse(call: Call<TvSeriesVideo>, response: Response<TvSeriesVideo>) {
+                    apiCallFinished()
+                    getTvSeriesVide.postValue(response.body())
+                }
+                override fun onFailure(call: Call<TvSeriesVideo>, t: Throwable) {
                     apiCallFinished()
                     errorMessage.postValue(t.message)
                 }

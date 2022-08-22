@@ -4,7 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.satya.movee.Repositories.MoviesRepositories
-import com.satya.movee.constants.Constant.Companion.apiCallFinished
 import com.satya.movee.constants.Constant.Companion.duringTheApiCall
 import com.satya.movee.model.search.movie.SearchMovieModel
 import com.satya.movee.model.trendingMovies.*

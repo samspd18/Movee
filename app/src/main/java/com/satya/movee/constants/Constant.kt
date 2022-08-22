@@ -13,9 +13,6 @@ class Constant {
         const val apiKey = "52a40c7199101f6f32e27fdd02c5f7dc"
         const val youtubeVideoUrl = "https://www.youtube.com/watch?v="
 
-        fun apiCallFinished() {
-            isLoading.postValue(true)
-        }
         fun duringTheApiCall() {
             isLoading.postValue(false)
         }

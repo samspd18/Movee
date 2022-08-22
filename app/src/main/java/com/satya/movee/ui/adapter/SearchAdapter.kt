@@ -1,7 +1,9 @@
 package com.satya.movee.ui.adapter
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.satya.movee.R
@@ -18,7 +20,9 @@ class SearchAdapter: RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
         this.notifyDataSetChanged()
 
     }
-        class ViewHolder(val binding: MovieRvSearchBinding) : RecyclerView.ViewHolder(binding.root)
+        class ViewHolder(val binding: MovieRvSearchBinding) : RecyclerView.ViewHolder(binding.root) {
+            var id: Int = 0
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -27,9 +31,6 @@ class SearchAdapter: RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-        var posterPath = ""
-        var name = ""
 
         val movie = movies[position]
 
@@ -40,6 +41,15 @@ class SearchAdapter: RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
 
         holder.binding.movieName.text = movie?.title
         "${movie?.voteAverage} / 10".also { holder.binding.rating.text = it }
+
+        holder.id = movies[position]?.id!!
+        val bundle = Bundle()
+        bundle.putInt("id",holder.id)
+
+        holder.itemView.setOnClickListener {
+            val nav = holder.binding.root.findNavController()
+            nav.navigate(R.id.navigation_detail,bundle)
+        }
 
     }
 

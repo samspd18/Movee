@@ -40,7 +40,7 @@ class MovieAllTimeFavoriteAdapter : RecyclerView.Adapter<ViewHolder>() {
         val bundle = Bundle()
         bundle.putInt("id",holder.id)
 
-        holder.itemView.setOnClickListener {
+        holder.binding.root.setOnClickListener {
             val nav = holder.binding.root.findNavController()
             nav.navigate(R.id.navigation_detail,bundle)
         }
