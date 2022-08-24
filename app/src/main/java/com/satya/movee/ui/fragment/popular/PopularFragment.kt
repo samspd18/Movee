@@ -1,4 +1,4 @@
-package com.satya.movee.ui.fragment
+package com.satya.movee.ui.fragment.popular
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -32,10 +32,7 @@ class PopularFragment : Fragment() {
     private val thisDayTrendingMovies = MovieAdapter()
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentPopularBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this, PopularViewModelFacory(MoviesRepositories(retrofitService)))[PopularViewModel::class.java]
 
@@ -44,6 +41,7 @@ class PopularFragment : Fragment() {
         upComingMovies()
         todayTrendingTvSeries()
         todayTrendingMovies()
+        loadLoader()
 
 
         viewModel.getAllPopularPerson(pageNumber)
@@ -53,6 +51,24 @@ class PopularFragment : Fragment() {
 
         return binding.root
     }
+
+    private fun loadLoader() {
+        viewModel.isLoading.observe(viewLifecycleOwner
+        ) { isLoading ->
+
+            if (isLoading != null) {
+                if (isLoading) {
+                    // hide your progress bar
+                    binding.popularLoader.visibility = View.GONE
+//                    binding.innerLayout.visibility = View.VISIBLE
+                } else if(!isLoading) {
+                    // binding.innerLayout.visibility = View.GONE
+                    binding.popularLoader.visibility = View.VISIBLE
+                }
+            }
+        }
+    }
+
 
     private fun upComingMovies() {
         binding.upcomingMovieRecyclerView.adapter = upComingAdapter

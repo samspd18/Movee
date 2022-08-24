@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "372615500383",
+    "project_id": "movee-1661369783841",
+    "storage_bucket": "movee-1661369783841.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372615500383:android:9779eddbd9469d389b01ea",
+        "android_client_info": {
+          "package_name": "com.satya.movee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372615500383-tc5lland5dit3dimrhiar8tt85a8q5b1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.satya.movee",
+            "certificate_hash": "8bc441a2ea706562da0f502b7178feb2d31b3bef"
+          }
+        },
+        {
+          "client_id": "372615500383-21ame6qde27daiofje7uhq9tbsfvqt5h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClCQop2xfNQG33B6PTp0_d97rqaoi9ZQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372615500383-21ame6qde27daiofje7uhq9tbsfvqt5h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

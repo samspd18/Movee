@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.satya.movee.ui.fragment.PopularFragment"
+        android:name="com.satya.movee.ui.fragment.popular.PopularFragment"
         android:label="@string/title_popular"
         tools:layout="@layout/fragment_popular" />
 
@@ -61,4 +61,10 @@
         android:name="com.satya.movee.ui.fragment.tv.SeriesDetailFragment"
         android:label="Detail"
         tools:layout="@layout/fragment_series_detail" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.satya.movee.ui.fragment.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
