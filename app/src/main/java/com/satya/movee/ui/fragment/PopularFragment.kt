@@ -11,15 +11,12 @@ import com.satya.movee.R
 import com.satya.movee.Repositories.MoviesRepositories
 import com.satya.movee.databinding.FragmentPopularBinding
 import com.satya.movee.network.RetrofitInstance
+import com.satya.movee.ui.adapter.movies.MovieAdapter
 import com.satya.movee.ui.adapter.popular.PopularPersonAdapter
 import com.satya.movee.ui.adapter.popular.UpCominGMoviesAdapter
-import com.satya.movee.viewmodel.ViewModel.MoviesViewModel
+import com.satya.movee.ui.adapter.popular.TrendingThisDayAdapter
 import com.satya.movee.viewmodel.ViewModel.PopularViewModel
-import com.satya.movee.viewmodel.ViewModel.TvShowsViewModel
-import com.satya.movee.viewmodel.ViewModelFactory.MoviesViewModelFactory
 import com.satya.movee.viewmodel.ViewModelFactory.PopularViewModelFacory
-//import com.satya.movee.viewmodel.ViewModelFactory.PopularViewModelFacory
-import com.satya.movee.viewmodel.ViewModelFactory.TvViewModelFactory
 
 class PopularFragment : Fragment() {
 
@@ -31,6 +28,8 @@ class PopularFragment : Fragment() {
 
     private var popularPersonAdapter = PopularPersonAdapter()
     private var upComingAdapter = UpCominGMoviesAdapter()
+    private var thisDayTrendingTvSeries = TrendingThisDayAdapter()
+    private val thisDayTrendingMovies = MovieAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,9 +42,14 @@ class PopularFragment : Fragment() {
         val pageNumber : Int = (1..45).random()
         popularPerson()
         upComingMovies()
+        todayTrendingTvSeries()
+        todayTrendingMovies()
+
 
         viewModel.getAllPopularPerson(pageNumber)
         viewModel.getUpcomingMovies()
+        viewModel.getAllTrendingTvShowsThisWeek()
+        viewModel.getAllTrendingMovies()
 
         return binding.root
     }
@@ -61,6 +65,20 @@ class PopularFragment : Fragment() {
         binding.popularRecyclerView.adapter = popularPersonAdapter
         viewModel.popularPerson.observe(viewLifecycleOwner) {
             popularPersonAdapter.setPopularPeople(it.results)
+        }
+    }
+
+    private fun todayTrendingTvSeries() {
+        binding.upComingTvSeriesRecyclerView.adapter = thisDayTrendingTvSeries
+        viewModel.getAllTrendingTvShowsWeek.observe(viewLifecycleOwner) {
+            thisDayTrendingTvSeries.setMovieList(it.results)
+        }
+    }
+
+    private fun todayTrendingMovies() {
+        binding.MoviesOfThisDayRecyclerView.adapter = thisDayTrendingMovies
+        viewModel.trendingMovieList.observe(viewLifecycleOwner) {
+            thisDayTrendingMovies.setMovieList(it.results)
         }
     }
 

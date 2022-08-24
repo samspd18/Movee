@@ -91,6 +91,15 @@ interface RetrofitService {
     @GET("person/popular?api_key=${apiKey}&language=en-US")
     fun getPopularPerson(@Query("page") page: Int): Call<PopularPersonModel>
 
+    //upcoming movies
     @GET("movie/upcoming?api_key=${apiKey}&region=IN")
     fun getUpcomingMovies(): Call<TrendingMovieList>
+
+    //trending tv shows of this day
+    @GET("trending/tv/day?api_key=${apiKey}&region=IN")
+    fun getAllTrendingTvShowsOfThisWeek(): Call<TrendingTvShowsList>
+
+    //trending movies of this day
+    @GET("trending/movie/day?api_key=${apiKey}&region=IN")
+    fun getAllTodayTrendingMovies(): Call<TrendingMovieList>
 }

@@ -27,4 +27,6 @@ class MoviesRepositories constructor(private val retrofitService: RetrofitServic
     //popular
     fun getPopularPersons(page: Int) = retrofitService.getPopularPerson(page)
     fun getUpcomingMovies() = retrofitService.getUpcomingMovies()
+    fun getAllTrendingDayTvShows() = retrofitService.getAllTrendingTvShowsOfThisWeek()
+    fun getAllTrendingTodayMovies() = retrofitService.getAllTodayTrendingMovies()
 }

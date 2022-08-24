@@ -10,11 +10,10 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
-        android:layout_width="@dimen/_90sdp"
+        android:layout_width="@dimen/_80sdp"
         android:layout_height="@dimen/_90sdp"
         android:layout_marginTop="4dp"
         android:backgroundTint="@color/black"
-        app:cardCornerRadius="@dimen/_65sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,13 +31,13 @@
 
     <TextView
         android:id="@+id/personName"
-        android:layout_width="@dimen/_90sdp"
+        android:layout_width="@dimen/_80sdp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/alice"
         android:text="Actor Name"
         android:layout_marginTop="@dimen/_3sdp"
         android:textColor="@color/golden_yellow"
-        android:textSize="@dimen/_13ssp"
+        android:textSize="@dimen/_12ssp"
         android:textStyle="bold"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="@+id/materialCardView"
