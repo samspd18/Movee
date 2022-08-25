@@ -51,6 +51,11 @@ class TvFragment : Fragment() {
             nav.navigate(R.id.navigation_search,bundle)
         }
 
+        binding.profile.setOnClickListener {
+            val nav = findNavController()
+            nav.navigate(R.id.navigation_profile)
+        }
+
         getAllTrendingTvShows()
         getTvShowsAiringToday()
         getTopRatedSeries()

@@ -15,4 +15,5 @@
     <string name="actor_name">Actor Name</string>
     <string name="latest_shows">Latest Shows</string>
     <string name="movie_title">Movie Title</string>
+    <string name="login_with_google">Login With Google</string>
 </resources>
