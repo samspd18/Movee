@@ -69,8 +69,6 @@ class LoginActivity : AppCompatActivity() {
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
         try {
             val account = completedTask.getResult(ApiException::class.java)
-            //Log.e("google", account.toString() )
-            //Toast.makeText(applicationContext, account.email , Toast.LENGTH_SHORT).show()
             // Signed in successfully, show authenticated UI.
             //updateUI(account)
 
@@ -81,6 +79,8 @@ class LoginActivity : AppCompatActivity() {
                 editor.putString("name",account.displayName)
                 editor.putString("email",account.email)
                 editor.putString("profileUrl",account.photoUrl.toString())
+
+                editor.apply()
 
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)

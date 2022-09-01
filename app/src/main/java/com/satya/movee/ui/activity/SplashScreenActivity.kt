@@ -28,34 +28,29 @@ class SplashScreenActivity : AppCompatActivity() {
 
         //for now we are using only navigation
 
- //       val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
-        //val name = sharedPreferences.getString("name","")
+        val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
+        val name = sharedPreferences.getString("name","")
 
-//        if(name!!.isEmpty()) {
-//            Handler(Looper.getMainLooper()).postDelayed({
-//                val intent = Intent(this, LoginActivity::class.java)
-//                startActivity(intent)
-//                finish()
-//            }, 3000)
-//        } else {
-//            Handler(Looper.getMainLooper()).postDelayed({
-//                val intent = Intent(this, MainActivity::class.java)
-//                startActivity(intent)
-//                finish()
-//            }, 3000)
-//        }
+        if(name!!.isEmpty()) {
+            Handler(Looper.getMainLooper()).postDelayed({
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }, 3000)
+        } else {
+            Handler(Looper.getMainLooper()).postDelayed({
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }, 3000)
+        }
+
 
 //        Handler(Looper.getMainLooper()).postDelayed({
-//            val intent = Intent(this, LoginActivity::class.java)
+//            val intent = Intent(this, MainActivity::class.java)
 //            startActivity(intent)
 //            finish()
 //        }, 3000)
-
-        Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }, 3000)
 
     }
 }
